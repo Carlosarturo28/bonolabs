@@ -24,7 +24,7 @@ const Hero = () => {
         >
           Bring essential roles and skills to your project for a fraction of the time and a fraction of the cost of full-time engagement.
         </Text>
-        <Button as="a" href="mailto:hola@bonolabs.co" mt={4} mb={[4, 0, 0]} borderRadius={50} colorScheme="blue" size="lg">
+        <Button as="a" href="mailto:hello@bonolabs.co" mt={4} mb={[4, 0, 0]} borderRadius={50} colorScheme="blue" size="lg">
           Tell me how
         </Button>
       </Box>
@@ -36,7 +36,7 @@ const Hero = () => {
           src="https://images.pexels.com/photos/14863919/pexels-photo-14863919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="Imagen del Hero"
           objectFit="cover"
-          w={600}
+          w={650}
           h={[250, 380, 380]}
         />
       </Flex>
