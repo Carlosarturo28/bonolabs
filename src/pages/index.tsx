@@ -14,18 +14,18 @@ export default function Home() {
       <Head>
         <title>We bring the best fractional teams for your startup</title>
         <meta name="title" content="We bring the best fractional teams for your startup" />
-        <meta name="description" content="Looking for high-quality software development without high costs? BonoLabs' fractional teams are the solution! Our expert developers from Colombia can work part-time on your project, giving you the benefits of a dedicated team." />
+        <meta name="description" content="Get affordable software development with BonoLabs' fractional teams. Our part-time expert developers from Colombia provide the benefits of a dedicated team. Choose us today!" />
 
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="https://www.bonolabs.co/"/>
         <meta property="og:title" content="We bring the best fractional teams for your startup"/>
-        <meta property="og:description" content="Looking for high-quality software development without high costs? BonoLabs' fractional teams are the solution! Our expert developers from Colombia can work part-time on your project, giving you the benefits of a dedicated team." />
+        <meta property="og:description" content="Get affordable software development with BonoLabs' fractional teams. Our part-time expert developers from Colombia provide the benefits of a dedicated team. Choose us today!" />
         <meta property="og:image" content="/meta.png" />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.bonolabs.co/" />
         <meta property="twitter:title" content="We bring the best fractional teams for your startup" />
-        <meta property="twitter:description" content="Looking for high-quality software development without high costs? BonoLabs' fractional teams are the solution! Our expert developers from Colombia can work part-time on your project, giving you the benefits of a dedicated team."/>
+        <meta property="twitter:description" content="Get affordable software development with BonoLabs' fractional teams. Our part-time expert developers from Colombia provide the benefits of a dedicated team. Choose us today!"/>
         <meta property="twitter:image" content="/meta.png" />
         <meta property="og:type" content="website"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
