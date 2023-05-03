@@ -20,7 +20,7 @@ const tabData = [
   {
     label: "DevOps",
     title: "Streamlining Your Workflow",
-    image: "https://images.pexels.com/photos/3822113/pexels-photo-3822113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: "https://images.pexels.com/photos/1181317/pexels-photo-1181317.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     content:
       "Efficiency is key in today's fast-paced digital world. Our DevOps experts specialize in streamlining your workflow and automating repetitive tasks, allowing your team to focus on what they do best. We provide continuous integration and deployment, monitoring, and scaling solutions to ensure that your systems are running smoothly and reliably.",
   },
