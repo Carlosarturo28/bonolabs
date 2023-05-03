@@ -20,7 +20,7 @@ const SectionCentered: React.FC<Props> = ({
     <Flex
       id={id}
       w="100%"
-      py={[16, 24]}
+      py={[20, 24]}
       bgColor={bgColor ? bgColor : "white"}
       mx="auto"
       px={[4, 8]}

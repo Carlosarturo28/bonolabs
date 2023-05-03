@@ -7,6 +7,8 @@ import { Flex } from "@chakra-ui/react";
 import SectionCentered from "@bono/components/SectionCentered";
 import PillsWithCards from "@bono/components/PillsWithCards";
 import Footer from "@bono/components/Footer";
+import AboutUs from "@bono/components/AboutUs";
+import CallToAction from "@bono/components/CTA/CallToAction";
 
 export default function Home() {
   return (
@@ -33,14 +35,17 @@ export default function Home() {
       </Head>
       <Flex as="main" flexDir="column">
         <Header />
-        <Hero />
+        <Hero id="header" />
         <SectionCentered
-          id="features"
+          id="services"
           title={["Pay less,", "achieve more"]}
           description="In a volatile market, don't get stuck with permanent hires. Boost your business growth and efficiency with our on-demand fractional teams at Bono."
         >
           <PillsWithCards />
         </SectionCentered>
+        <AboutUs />
+        <CallToAction />
+        
         <Footer />
       </Flex>
     </>
