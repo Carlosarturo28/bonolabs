@@ -12,10 +12,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Bono Labs - Fractional teams for your startup</title>
+        <title>Bono Labs - We bring the best fractional teams for your startup</title>
         <meta
           name="description"
-          content="Software development made in Cali, Colombia"
+          content="Looking to supercharge your software development efforts without breaking the bank? BonoLabs' fractional teams have got you covered! Our expert developers from Colombia can join your project on a part-time basis, giving you all the benefits of a dedicated team without the high costs. Don't settle for less – choose BonoLabs and experience the power of fractional teams today!"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
