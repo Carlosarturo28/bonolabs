@@ -33,7 +33,7 @@ const Hero = () => {
       <Flex justifyContent="flex-end" w={["100%", "100%", "50%"]}>
         <Image
         borderLeftRadius={50}
-          src="https://images.pexels.com/photos/14863919/pexels-photo-14863919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src="https://images.pexels.com/photos/4974920/pexels-photo-4974920.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="Imagen del Hero"
           objectFit="cover"
           w={650}
