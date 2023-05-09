@@ -23,6 +23,7 @@ const Header = () => {
   const [navLinks, setNavLinks] = useState([
     { label: "Services", href: "#services" },
     { label: "About Us", href: "#about-us" },
+    { label: "Blog", href: "/blog" }, 
   ]);
   const [height, setHeight] = useState(6);
   const [shadow, setShadow] = useState("none");
@@ -31,17 +32,24 @@ const Header = () => {
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
     const targetId = (event.target as HTMLElement).getAttribute("href");
-    const targetElement = document.querySelector(`#${targetId?.split("#")[1]}`);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+  
+    if (targetId.startsWith("#")) {
+      // Este es un enlace a una ancla en la misma página
+      const targetElement = document.querySelector(`#${targetId?.split("#")[1]}`);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
     } else {
+      // Este es un enlace a otra página
       push(`${targetId}`);
     }
+  
     onClose();
   };
+  
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
