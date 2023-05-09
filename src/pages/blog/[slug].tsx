@@ -5,6 +5,7 @@ import Head from "next/head";
 
 import Header from "@bono/components/Header";
 import Footer from "@bono/components/Footer";
+import React from 'react';
 
 interface PostProps {
   post: {
@@ -30,7 +31,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   const slug = context.params.slug;
 
   const client = new ApolloClient({
-    uri: "http://blog.bonolabs.co/index.php?graphql",
+    uri: "https://blog.bonolabs.co/index.php?graphql",
     cache: new InMemoryCache(),
   });
 
