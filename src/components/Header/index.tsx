@@ -13,7 +13,7 @@ import {
   Image,
   Link,
 } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, MouseEvent } from "react";
 import { useRouter } from "next/router";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { MdCall } from "react-icons/md";
@@ -23,25 +23,30 @@ const Header = () => {
   const [navLinks, setNavLinks] = useState([
     { label: "Services", href: "#services" },
     { label: "About Us", href: "#about-us" },
+    { label: "Blog", href: "/blog" }, 
   ]);
   const [height, setHeight] = useState(6);
   const [shadow, setShadow] = useState("none");
   const { push } = useRouter();
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
     event.preventDefault();
-    const targetId = (event.target as HTMLElement).getAttribute("href");
-    const targetElement = document.querySelector(`#${targetId?.split("#")[1]}`);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    } else {
-      push(`${targetId}`);
+    const targetId = event.currentTarget.getAttribute("href");
+    if (targetId) {
+      const targetElement = document.querySelector(`#${targetId.split("#")[1]}`);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      } else {
+        push(`${targetId}`);
+      }
     }
     onClose();
   };
+
+  
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
