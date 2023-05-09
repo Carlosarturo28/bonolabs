@@ -13,7 +13,7 @@ import {
   Image,
   Link,
 } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, MouseEvent } from "react";
 import { useRouter } from "next/router";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { MdCall } from "react-icons/md";
@@ -29,26 +29,23 @@ const Header = () => {
   const [shadow, setShadow] = useState("none");
   const { push } = useRouter();
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
     event.preventDefault();
-    const targetId = (event.target as HTMLElement).getAttribute("href");
-  
-    if (targetId.startsWith("#")) {
-      // Este es un enlace a una ancla en la misma página
-      const targetElement = document.querySelector(`#${targetId?.split("#")[1]}`);
+    const targetId = event.currentTarget.getAttribute("href");
+    if (targetId) {
+      const targetElement = document.querySelector(`#${targetId.split("#")[1]}`);
       if (targetElement) {
         targetElement.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
+      } else {
+        push(`${targetId}`);
       }
-    } else {
-      // Este es un enlace a otra página
-      push(`${targetId}`);
     }
-  
     onClose();
   };
+
   
 
   const handleScroll = () => {

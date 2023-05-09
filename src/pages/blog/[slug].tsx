@@ -1,3 +1,4 @@
+import { GetServerSidePropsContext } from 'next';
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { Box, Heading, Text, Flex, Image } from "@chakra-ui/react";
 import Head from "next/head";
@@ -5,7 +6,29 @@ import Head from "next/head";
 import Header from "@bono/components/Header";
 import Footer from "@bono/components/Footer";
 
-export async function getServerSideProps(context) {
+interface PostProps {
+  post: {
+    id: string;
+    title: string;
+    content: string;
+    date: string;
+    featuredImage: {
+      node: {
+        sourceUrl: string;
+      };
+    };
+  };
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  if (!context.params || typeof context.params.slug !== 'string') {
+    return {
+      notFound: true,
+    };
+  }
+
+  const slug = context.params.slug;
+
   const client = new ApolloClient({
     uri: "http://blog.bonolabs.co/index.php?graphql",
     cache: new InMemoryCache(),
@@ -34,7 +57,7 @@ export async function getServerSideProps(context) {
       }
     `,
     variables: {
-      id: context.params.slug,
+      id: slug,
     },
   });
 
@@ -45,7 +68,7 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default function PostPage({ post }) {
+export default function PostPage({ post } : PostProps) {
   return (
     <>
     <Head>

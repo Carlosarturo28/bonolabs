@@ -1,6 +1,6 @@
 import { Box, SimpleGrid, Heading, Text, Link } from '@chakra-ui/react';
 
-interface Post {
+export interface GridPost {
   id: string;
   title: string;
   content: string;
@@ -9,7 +9,7 @@ interface Post {
 }
 
 interface PostsGridProps {
-  posts: Post[];
+  posts: GridPost[];
 }
 
 const PostsGrid: React.FC<PostsGridProps> = ({ posts }) => {

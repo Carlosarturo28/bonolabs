@@ -1,3 +1,4 @@
+import { GetServerSidePropsContext } from 'next';
 import Head from "next/head";
 import { Flex, Container, Heading } from "@chakra-ui/react";
 import Footer from "@bono/components/Footer";
@@ -5,8 +6,28 @@ import PostsGrid from "@bono/components/Blog/PostsGrid";
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
 import Header from "@bono/components/Header";
+import { GridPost } from '@bono/components/Blog/PostsGrid';
 
-export async function getServerSideProps(context) {
+interface Post {
+  post: {
+    id: string;
+    title: string;
+    content: string;
+    date: string;
+    featuredImage: {
+      node: {
+        sourceUrl: string;
+      };
+    };
+  }
+}
+
+interface PostsPageProps {
+  posts: GridPost[];
+}
+
+
+export async function getServerSideProps(context:GetServerSidePropsContext) {
   const client = new ApolloClient({
     uri: 'http://blog.bonolabs.co/index.php?graphql',
     cache: new InMemoryCache(),
@@ -37,7 +58,7 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default function PostsPage({ posts }) {
+export default function PostsPage({ posts }:PostsPageProps) {
   return (
     <>
       <Head>
